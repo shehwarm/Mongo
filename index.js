@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { use } = require('react');
 
 main()
 .then((res) => {
@@ -25,3 +26,4 @@ const user1 = new User({
     age: 30,
     email: 'johnny@202',
 });
+user1.save();
