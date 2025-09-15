@@ -20,14 +20,12 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
-
-
-
-/*User.updateMany( {age: {$gt: 21}}, {age: 20})
+User.findByIdAndUpdate( {_id:"68c6ec9fc38566524e8cab49"}, {age: 10})
 .then(res => console.log(res))
 .catch(err => console.log(err));
 
-User.findAndUpdateById( {age: {$gt: 21}}, {age: 10})
+
+/*User.updateMany( {age: {$gt: 21}}, {age: 20})
 .then(res => console.log(res))
 .catch(err => console.log(err));
 
