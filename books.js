@@ -11,19 +11,35 @@ async function main() {
 }
 
 const bookSchema = new mongoose.Schema({
-    title: String,
-    author: String,
-    price: Number,
-    discount: Number,
+    title: {
+        type: String,
+        required: true,
+        maxLength: 20,
+    },
+    author: {
+        type: String,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    discount: {
+        type: Number,
+        default: 0,
+    },
+    category: {
+        type: String,
+        enum: ['fiction', 'non-fiction', 'comic', 'biography', 'science'],
+    },
 });
 
 const Book = mongoose.model('Book', bookSchema);
 
 let book1 = new Book({
-    title: "Book One",
-    author: "Author One",
-    price: 1200,
-    discount: 10,
+    title: "Comic",
+    author: "zuberg",
+    price: 800,
+    discount: 100,
 });
 
 book1.save()
