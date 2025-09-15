@@ -40,6 +40,7 @@ let book1 = new Book({
     author: "zuberg",
     price: 800,
     discount: 100,
+    category: "comic",
 });
 
 book1.save()
