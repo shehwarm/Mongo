@@ -20,6 +20,18 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+User.updateMany( {age: {$gt: 21}}, {age: 20})
+.then(res => console.log(res))
+.catch(err => console.log(err));
+
+/*User.updateOne({name: "shehwar"}, {age: 30})
+.then(res => console.log(res))
+.catch(err => console.log(err));
+
+User.findOne({age : {$gt: 21}})
+.then((res) => console.log(res))
+.catch((err) => console.log(err));
+
 User.insertMany([
     {name:"shehwar", email:"shehwar@", age:20},
     {name:"ali", email:"ali@", age:22},
@@ -29,7 +41,7 @@ User.insertMany([
 
 
 
-/*const user2 = new User({
+const user2 = new User({
     name: "Ali",
     age: 22,
     email: "ali.com",
